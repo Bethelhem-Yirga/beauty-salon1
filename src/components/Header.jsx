@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Navbar, Nav, Container, Form } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const THEME_KEY = 'glass-theme' // 'dark' or 'light'
@@ -63,8 +63,12 @@ export default function Header() {
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'))
+  const setLightTheme = () => {
+    setTheme('light')
+  }
+
+  const setDarkTheme = () => {
+    setTheme('dark')
   }
 
   // Don't render theme toggle until mounted to prevent hydration mismatch
@@ -109,60 +113,26 @@ export default function Header() {
           </Navbar.Brand>
 
           <div className="header-controls d-flex align-items-center">
-            {/* Enhanced Theme Toggle */}
-            <Form className="theme-toggle-form me-3" role="group" aria-label="Theme toggle">
-              <div className="d-flex align-items-center">
-                {/* Sun icon for light mode */}
-                <span 
-                  className="theme-icon" 
-                  aria-hidden="true"
-                  style={{ 
-                    opacity: theme === 'light' ? 1 : 0.5,
-                    transition: 'opacity 0.2s',
-                    marginRight: '0.5rem'
-                  }}
-                >
-                  ☀️
-                </span>
-                
-                <div className="form-check form-switch my-0">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    id="themeSwitch"
-                    checked={theme === 'dark'}
-                    onChange={toggleTheme}
-                    aria-checked={theme === 'dark'}
-                    aria-label="Toggle dark theme"
-                    style={{ cursor: 'pointer' }}
-                  />
-                  <label 
-                    className="form-check-label small ms-2" 
-                    htmlFor="themeSwitch"
-                    style={{ cursor: 'pointer' }}
-                  >
-                    <span className="visually-hidden">
-                      {theme === 'dark' ? 'Dark mode enabled' : 'Light mode enabled'}
-                    </span>
-                    <span aria-hidden="true">
-                      {theme === 'dark' ? 'Dark' : 'Light'}
-                    </span>
-                  </label>
-                </div>
-
-                {/* Moon icon for dark mode */}
-                <span 
-                  className="theme-icon ms-2" 
-                  aria-hidden="true"
-                  style={{ 
-                    opacity: theme === 'dark' ? 1 : 0.5,
-                    transition: 'opacity 0.2s'
-                  }}
-                >
-                  🌙
-                </span>
-              </div>
-            </Form>
+            {/* Icon-based Theme Toggle - No Tooltips */}
+            <div className="theme-icons" role="group" aria-label="Theme selector">
+              <button
+                className={`theme-icon-btn ${theme === 'light' ? 'active' : ''}`}
+                onClick={setLightTheme}
+                aria-label="Switch to light theme"
+                aria-pressed={theme === 'light'}
+              >
+                <span className="theme-icon" aria-hidden="true">☀️</span>
+              </button>
+              
+              <button
+                className={`theme-icon-btn ${theme === 'dark' ? 'active' : ''}`}
+                onClick={setDarkTheme}
+                aria-label="Switch to dark theme"
+                aria-pressed={theme === 'dark'}
+              >
+                <span className="theme-icon" aria-hidden="true">🌙</span>
+              </button>
+            </div>
 
             <Navbar.Toggle aria-controls="main-nav" />
           </div>
