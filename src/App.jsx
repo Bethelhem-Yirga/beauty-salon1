@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Staff from './pages/Staff'
 import Pricing from './pages/Pricing'
 import Gallery from './pages/Gallery'
+import './styles/main.css'
 
 export default function App() {
 return (
