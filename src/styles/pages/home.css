@@ -1,0 +1,86 @@
+/* ===== HOME PAGE STYLES ===== */
+@import '../variables.css';
+@import '../base.css';
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--hero-bg-start) 0%, var(--hero-bg-end) 100%);
+  color: var(--hero-text);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border-radius: 0.5rem;
+}
+
+.hero-description {
+  color: var(--hero-text-secondary);
+}
+
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-1 { top: 10%; left: 5%; }
+.floating-2 { bottom: 15%; right: 5%; animation-delay: 1s; font-size: 2.5rem; }
+.floating-3 { top: 20%; right: 15%; animation-delay: 2s; font-size: 1.8rem; }
+.floating-4 { bottom: 25%; left: 10%; animation-delay: 3s; font-size: 2.2rem; }
+
+/* Stats section */
+.stats-section {
+  background: var(--stats-bg);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  opacity: 0.05;
+  animation: rotate 20s linear infinite;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--stat-bg);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}

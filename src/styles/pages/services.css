@@ -1,0 +1,184 @@
+/* ===== SERVICES PAGE STYLES ===== */
+@import '../variables.css';
+@import '../base.css';
+
+.services-page {
+  padding: 2rem 0;
+  min-height: 80vh;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--services-title);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.services-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease forwards;
+}
+
+.services-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 1.5rem auto;
+  line-height: 1.6;
+}
+
+/* Filter buttons */
+.service-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--card-border);
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--accent-color);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: -1;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.filter-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.filter-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-color);
+}
+
+/* Service card wrapper */
+.service-card-wrapper {
+  height: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.service-card-wrapper.animate-in {
+  animation: cardAppear 0.6s ease forwards;
+}
+
+@keyframes cardAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Service Benefits Section */
+.service-benefits {
+  padding: 2rem 0;
+}
+
+.benefits-title {
+  font-size: 2rem;
+  color: var(--services-title);
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.benefits-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  animation: fadeInUp 0.6s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: bounce 2s ease infinite;
+}
+
+.benefit-item h4 {
+  color: var(--card-text);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+  color: var(--card-text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.benefit-item:nth-child(1) { animation-delay: 0.1s; }
+.benefit-item:nth-child(2) { animation-delay: 0.2s; }
+.benefit-item:nth-child(3) { animation-delay: 0.3s; }
+.benefit-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

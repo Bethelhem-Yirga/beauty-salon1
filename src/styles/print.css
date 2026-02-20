@@ -1,0 +1,34 @@
+/* ===== PRINT STYLES ===== */
+@media print {
+  .glass-header,
+  .glass-footer,
+  .btn-book,
+  .btn-details,
+  .btn-package,
+  .filter-btn,
+  .service-filters,
+  .theme-icons {
+    display: none !important;
+  }
+  
+  .service-card {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+  
+  .glass-footer {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+  
+  .footer-link {
+    color: black !important;
+  }
+  
+  body {
+    padding-top: 0;
+  }
+}

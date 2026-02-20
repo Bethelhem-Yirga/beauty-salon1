@@ -1,0 +1,338 @@
+/* ===== SERVICE CARD STYLES ===== */
+@import '../variables.css';
+
+.service-card {
+  background: transparent !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  color: var(--card-text);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+  border-radius: inherit;
+  transition: background 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.service-card:hover::before {
+  background: var(--card-glass-hover-bg);
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--accent-color), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+/* Card badge */
+.card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+}
+
+.card-badge span {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+/* Card icon */
+.card-icon {
+  font-size: 4rem;
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Card content */
+.card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--card-text);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.service-card:hover .card-title::after {
+  width: 60px;
+}
+
+.card-description {
+  color: var(--card-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Service features */
+.service-features {
+  margin: 1rem 0;
+  flex: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--card-text-secondary);
+  font-size: 0.9rem;
+}
+
+.feature-check {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Service meta */
+.service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 1rem;
+}
+
+.price-section {
+  display: flex;
+  align-items: baseline;
+}
+
+.price-currency {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-right: 2px;
+}
+
+.price-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1;
+}
+
+.duration-section {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-secondary);
+}
+
+.duration-icon {
+  font-size: 1.1rem;
+}
+
+/* Card actions */
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-book {
+  flex: 1;
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-book::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-book:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--accent-color);
+}
+
+.btn-book:hover::before {
+  left: 100%;
+}
+
+.btn-book:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.btn-details {
+  width: 45px;
+  background: var(--card-glass-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.btn-details:hover {
+  background: var(--card-glass-hover-bg);
+  transform: rotate(15deg);
+}
+
+/* Tooltip for details button */
+.btn-details::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-text);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.btn-details::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--tooltip-bg) transparent transparent transparent;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-details:hover::before,
+.btn-details:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Card shimmer */
+.card-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%) rotate(45deg);
+  pointer-events: none;
+}
+
+.service-card:hover .card-shimmer {
+  animation: shimmer 1s ease;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Loading state */
+.service-card.loading {
+  background: linear-gradient(90deg, var(--card-glass-bg) 25%, var(--card-glass-hover-bg) 50%, var(--card-glass-bg) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes cardPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

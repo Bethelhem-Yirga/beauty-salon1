@@ -1,0 +1,134 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #213547;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --link-color: #0d6efd;
+  --link-hover: #0b5ed7;
+  
+  /* Header */
+  --header-bg-start: rgba(255, 255, 255, 0.62);
+  --header-bg-end: rgba(255, 255, 255, 0.45);
+  
+  /* Footer */
+  --footer-bg: #ffffff;
+  --footer-text: #213547;
+  --footer-text-muted: rgba(33, 53, 71, 0.7);
+  --footer-border: rgba(0, 0, 0, 0.1);
+  --footer-secondary: #f8f8f8;
+  --footer-link-hover: #0d6efd;
+  --footer-heading: #213547;
+  
+  /* Shadows */
+  --shadow-color: rgba(18, 38, 63, 0.08);
+  
+  /* Hero Section */
+  --hero-bg-start: #f8f9fa;
+  --hero-bg-end: #e9ecef;
+  --hero-text: #213547;
+  --hero-text-secondary: #4a5568;
+  
+  /* Cards */
+  --card-text: #213547;
+  --card-text-secondary: #4a5568;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-border-hover: rgba(0, 0, 0, 0.2);
+  --card-glass-bg: rgba(255, 255, 255, 0.7);
+  --card-glass-hover-bg: rgba(255, 255, 255, 0.9);
+  
+  /* Section */
+  --section-title: #213547;
+  --accent-color: #0d6efd;
+  --accent-hover: #0b5ed7;
+  
+  /* Stats */
+  --stats-bg: rgba(248, 249, 250, 0.8);
+  --stat-bg: rgba(255, 255, 255, 0.9);
+  
+  /* Services */
+  --services-title: #213547;
+  
+  /* Tooltips */
+  --tooltip-bg: #333;
+  --tooltip-text: white;
+  
+  /* Theme Icons */
+  --theme-icons-bg: rgba(255, 255, 255, 0.9);
+  --theme-icons-border: rgba(0, 0, 0, 0.1);
+  --theme-icons-hover-bg: rgba(255, 255, 255, 1);
+  --theme-icons-hover-border: rgba(0, 0, 0, 0.2);
+  --theme-icon-active-bg: rgba(13, 110, 253, 0.15);
+  --theme-icon-active-shadow: rgba(13, 110, 253, 0.3);
+  --theme-icon-ripple: rgba(13, 110, 253, 0.1);
+  --theme-icon-ripple-active: rgba(13, 110, 253, 0.2);
+}
+
+/* Dark theme */
+.theme-dark {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --link-color: #6ea8fe;
+  --link-hover: #8bb9fe;
+  
+  /* Header */
+  --header-bg-start: rgba(20, 20, 25, 0.38);
+  --header-bg-end: rgba(20, 20, 25, 0.20);
+  
+  /* Footer */
+  --footer-bg: #1a1a1a;
+  --footer-text: rgba(255, 255, 255, 0.87);
+  --footer-text-muted: rgba(255, 255, 255, 0.6);
+  --footer-border: rgba(255, 255, 255, 0.1);
+  --footer-secondary: #2d2d2d;
+  --footer-link-hover: #6ea8fe;
+  --footer-heading: rgba(255, 255, 255, 0.95);
+  
+  /* Shadows */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  
+  /* Hero Section */
+  --hero-bg-start: #2d2d2d;
+  --hero-bg-end: #1a1a1a;
+  --hero-text: rgba(255, 255, 255, 0.95);
+  --hero-text-secondary: rgba(255, 255, 255, 0.7);
+  
+  /* Cards */
+  --card-text: rgba(255, 255, 255, 0.95);
+  --card-text-secondary: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-border-hover: rgba(255, 255, 255, 0.25);
+  --card-glass-bg: rgba(255, 255, 255, 0.05);
+  --card-glass-hover-bg: rgba(255, 255, 255, 0.08);
+  
+  /* Section */
+  --section-title: rgba(255, 255, 255, 0.95);
+  --accent-color: #6ea8fe;
+  --accent-hover: #8bb9fe;
+  
+  /* Stats */
+  --stats-bg: rgba(45, 45, 45, 0.8);
+  --stat-bg: rgba(255, 255, 255, 0.05);
+  
+  /* Services */
+  --services-title: rgba(255, 255, 255, 0.95);
+  
+  /* Tooltips */
+  --tooltip-bg: rgba(255, 255, 255, 0.9);
+  --tooltip-text: #333;
+  
+  /* Theme Icons */
+  --theme-icons-bg: rgba(45, 45, 45, 0.9);
+  --theme-icons-border: rgba(255, 255, 255, 0.15);
+  --theme-icons-hover-bg: rgba(55, 55, 55, 1);
+  --theme-icons-hover-border: rgba(255, 255, 255, 0.25);
+  --theme-icon-active-bg: rgba(110, 168, 254, 0.2);
+  --theme-icon-active-shadow: rgba(110, 168, 254, 0.3);
+  --theme-icon-ripple: rgba(110, 168, 254, 0.15);
+  --theme-icon-ripple-active: rgba(110, 168, 254, 0.25);
+}

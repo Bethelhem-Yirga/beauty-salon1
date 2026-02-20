@@ -1,0 +1,123 @@
+/* ===== HEADER STYLES ===== */
+@import '../variables.css';
+
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  padding: 0.5rem 0;
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(180deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+/* Dark mode fallback */
+@media (prefers-color-scheme: dark) {
+  .glass-header {
+    background: linear-gradient(180deg, rgba(20, 20, 25, 0.38) 0%, rgba(20, 20, 25, 0.20) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Shimmer effect */
+.glass-header::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 220%;
+  height: 200%;
+  background: linear-gradient(120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.12) 40%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.12) 60%,
+    rgba(255,255,255,0) 100%);
+  transform: translateX(-100%) rotate(6deg);
+  filter: blur(8px);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: shimmer-slide 6.5s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
+.glass-header:hover::after {
+  animation-duration: 5.2s;
+  opacity: 1;
+}
+
+@keyframes shimmer-slide {
+  0% { transform: translateX(-100%) rotate(6deg); opacity: 0; }
+  8% { opacity: 0.6; }
+  45% { transform: translateX(0%) rotate(6deg); opacity: 0.9; }
+  75% { opacity: 0.35; }
+  100% { transform: translateX(100%) rotate(6deg); opacity: 0; }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.brand-logo {
+  font-size: 1.25rem;
+}
+
+.brand-text {
+  font-size: 1.05rem;
+}
+
+.glass-header .nav-link {
+  color: var(--text-primary);
+  opacity: 0.9;
+  transition: color 0.15s ease;
+}
+
+.glass-header .nav-link:hover {
+  color: var(--link-hover);
+}
+
+.glass-header .btn-contact {
+  background: rgba(13, 110, 253, 0.12);
+  color: var(--link-color) !important;
+  border: 1px solid rgba(13, 110, 253, 0.15);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+.glass-header .btn-contact:hover {
+  background: rgba(13, 110, 253, 0.18);
+  color: var(--link-hover) !important;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Focus states */
+.glass-header .nav-link:focus,
+.glass-header .btn-contact:focus,
+.glass-header .navbar-brand:focus {
+  outline: 3px solid rgba(13,110,253,0.18);
+  outline-offset: 2px;
+  border-radius: 6px;
+  z-index: 3;
+}
+
+/* Responsive header */
+@media (max-width: 575.98px) {
+  .brand-text { display: none; }
+  .glass-header .nav-link { padding: 0.5rem 0.75rem; }
+}

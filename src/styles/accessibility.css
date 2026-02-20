@@ -1,0 +1,43 @@
+/* ===== ACCESSIBILITY & REDUCED MOTION ===== */
+@import './variables.css';
+
+/* Focus states for accessibility */
+.theme-icon-btn:focus-visible,
+.footer-link:focus-visible,
+.glass-header .nav-link:focus,
+.glass-header .btn-contact:focus,
+.glass-header .navbar-brand:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .floating-element,
+  .card-shimmer,
+  .stat-number,
+  .theme-icons,
+  .theme-icon-btn,
+  .theme-icon,
+  .theme-icon-btn::before,
+  .glass-header::after {
+    animation: none !important;
+  }
+  
+  .service-card:hover,
+  .theme-icon-btn:hover,
+  .theme-icon-btn:active,
+  .glass-header:hover::after {
+    transform: none;
+  }
+}

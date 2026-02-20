@@ -1,0 +1,163 @@
+/* ===== BASE STYLES ===== */
+@import './variables.css';
+
+* {
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  padding-top: 70px;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.gallery-img { 
+  object-fit: cover; 
+  width: 100%; 
+  height: 220px; 
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes expandWidth {
+  to { width: 60px; }
+}
+
+/* ===== ANIMATION CLASSES ===== */
+.animate-slide-up,
+.animate-slide-left,
+.animate-slide-right,
+.animate-scale-up,
+.animate-fade-in {
+  opacity: 0;
+}
+
+.animate-in { animation: slideUp 0.8s ease forwards; }
+.animate-slide-left.animate-in { animation: slideInLeft 0.8s ease forwards; }
+.animate-slide-right.animate-in { animation: slideInRight 0.8s ease forwards; }
+.animate-scale-up.animate-in { animation: scaleUp 0.6s ease forwards; }
+.animate-fade-in.animate-in { animation: fadeIn 1s ease forwards; }
+
+.animate-delay-1 { animation-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; }
+.animate-delay-4 { animation-delay: 0.8s; }
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-bounce { animation: bounce 2s ease-in-out infinite; }
+.animate-pulse-hover:hover { animation: pulse 0.5s ease-in-out; }
+.animate-rotate { animation: rotate 10s linear infinite; }

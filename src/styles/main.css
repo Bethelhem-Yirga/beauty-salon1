@@ -1,0 +1,22 @@
+/* ===== MAIN CSS FILE ===== */
+/* Import all modular CSS files */
+
+/* Base */
+@import './variables.css';
+@import './base.css';
+
+/* Components */
+@import './components/header.css';
+@import './components/theme-icons.css';
+@import './components/footer.css';
+@import './components/service-card.css';
+@import './components/package.css';
+
+/* Pages */
+@import './pages/home.css';
+@import './pages/services.css';
+
+/* Utilities */
+@import './accessibility.css';
+@import './responsive.css';
+@import './print.css';
