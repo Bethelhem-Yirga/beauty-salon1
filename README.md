@@ -168,4 +168,240 @@ EmailJS (optional) - Form submission
 
 # 📁 Project Structure
 
+```bash
+beauti-salon/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── ThemeIcons.jsx
+│   ├── data/
+│   │   ├── services.js
+│   │   └── staff.js
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Services.jsx
+│   │   ├── Pricing.jsx
+│   │   ├── Staff.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── About.jsx
+│   │   └── Contact.jsx
+│   ├── styles/
+│   │   ├── main.css
+│   │   ├── variables.css
+│   │   ├── base.css
+│   │   ├── accessibility.css
+│   │   ├── responsive.css
+│   │   ├── print.css
+│   │   ├── components/
+│   │   │   ├── header.css
+│   │   │   ├── footer.css
+│   │   │   ├── theme-icons.css
+│   │   │   ├── service-card.css
+│   │   │   └── package.css
+│   │   └── pages/
+│   │       ├── home.css
+│   │       ├── services.css
+│   │       ├── pricing.css
+│   │       ├── staff.css
+│   │       ├── gallery.css
+│   │       ├── about.css
+│   │       └── contact.css
+│   ├── utils/
+│   │   └── serviceHelpers.js
+│   ├── App.jsx
+│   ├── App.css
+│   └── index.js
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
+# 🚀 Installation
+## Prerequisites
+Node.js (v14 or higher)
+
+npm or yarn
+
+## Steps
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/beauti-salon.git
+cd beauti-salon
+```
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+### 3. Start development server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+# ⚙️ Configuration
+## Environment Variables
+Create a .env file in the root directory:
+
+```bash
+env
+VITE_GOOGLE_MAPS_API_KEY=your_api_key_here
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_USER_ID=your_user_id
+```
+## Theme Configuration
+Edit src/styles/variables.css to customize colors:
+
+```bash
+css
+
+:root {
+  --accent-color: #0d6efd;
+  --accent-hover: #0b5ed7;
+  --text-primary: #213547;
+  --bg-primary: #ffffff;
+  /* ... other variables */
+}
+```
+
+# 🧩 Components
+## Header
+Fixed navigation bar
+
+Theme toggle (sun/moon icons)
+
+Responsive mobile menu
+
+Shimmer animation effect
+
+## Footer
+Full-width design
+
+Quick links
+
+Service categories
+
+Contact information
+
+Copyright notice
+
+## Service Card
+Glass morphism design
+
+Icon display
+
+Title and description
+
+Price and duration
+
+Book button
+
+Shimmer effect on hover
+
+## Theme Icons
+Sun/moon toggle buttons
+
+Active state indicator
+
+Smooth transitions
+
+Glow animations
+
+# 🎨 Styling
+## CSS Architecture
+Modular CSS - Separate files per component/page
+
+CSS Variables - Centralized theme management
+
+Mobile First - Responsive from the ground up
+
+BEM Naming - Consistent class naming
+
+## Key Animations
+fadeIn - Opacity transitions
+
+slideUp - Element entrance
+
+scaleUp - Card appearances
+
+float - Continuous floating
+
+pulse - Attention-grabbing effects
+
+shimmer - Loading and hover effects
+
+# Glass Morphism
+```bash
+css
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+```
+# 🌓 Theme System
+## Light Theme (Default)
+Clean white backgrounds
+
+Dark text for readability
+
+Subtle shadows
+
+## Dark Theme
+Dark backgrounds
+
+Light text
+
+Reduced eye strain
+
+Smooth transitions
+
+## Theme Switching
+Persisted in localStorage
+
+System preference detection
+
+Smooth transitions
+
+No flash on page load
+
+# 🔌 API Integration
+## Google Maps
+```bash
+javascript
+
+// In Contact page
+<iframe
+  src="https://www.google.com/maps/embed?pb=..."
+  width="100%"
+  height="400"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+/>
+```
+## Email Service (Optional)
+```bash
+javascript
+
+// Contact form submission
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  await emailjs.send(
+    'service_id',
+    'template_id',
+    form,
+    'user_id'
+  );
+};
+```
