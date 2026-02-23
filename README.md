@@ -1,18 +1,171 @@
-beauty-salon1
+# 💇‍♀️ Beauty Salon - Web Application
 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive beauty salon website built with React, featuring glass morphism design, dark/light theme switching, and complete business functionality.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 📋 Table of Contents
+Features
 
-## React Compiler
+Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Project Structure
 
-## Expanding the ESLint configuration
+Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# beauty-salon1
+Configuration
+
+Pages Overview
+
+Components
+
+Styling
+
+Theme System
+
+API Integration
+
+Deployment
+
+Contributing
+
+License
+
+## ✨ Features
+## 🎨 Design Features
+
+Glass Morphism UI - Modern frosted glass effects throughout
+
+Dark/Light Theme - Toggle between themes with persistent storage
+
+Fully Responsive - Works perfectly on all devices
+
+Smooth Animations - Scroll-triggered animations and hover effects
+
+Accessibility - WCAG compliant with keyboard navigation
+
+# 📄 Pages & Functionality
+
+## Home Page
+Hero section with floating animations
+
+Featured services cards
+
+Statistics counter
+
+Call-to-action buttons
+
+## Services Page
+Service catalog with icons
+
+Category filtering
+
+Service details (duration, price)
+
+Popular service badges
+
+Book now functionality
+
+## Pricing Page
+Dynamic pricing display
+
+Category filters
+
+Package deals with discounts
+
+Price comparison
+
+Service descriptions
+
+## Staff Page
+Team member profiles
+
+Category filtering (nails, eyes, makeup)
+
+Staff ratings and experience
+
+Modal popups for details
+
+Social media links
+
+## Gallery Page
+Masonry image grid
+
+Category filtering
+
+Lightbox modal for full-size view
+
+Image navigation
+
+Loading skeletons
+
+## About Page
+Company story with timeline
+
+Mission & Vision cards
+
+Core values
+
+Team founders
+
+Testimonials
+
+Features showcase
+
+## Contact Page
+Contact information cards
+
+Working hours
+
+Social media links
+
+Contact form with validation
+
+Google Maps integration
+
+FAQ section
+
+## 🔧 Technical Features
+React Router for navigation
+
+Custom theme context
+
+Local storage for preferences
+
+Responsive images
+
+Lazy loading
+
+Error boundaries
+
+Print stylesheets
+
+# 🛠 Tech Stack
+## Frontend
+React 18 - UI library
+
+React Router 6 - Navigation
+
+React Bootstrap - Grid system & components
+
+CSS3 - Custom styling with variables
+
+Vite - Build tool and development server
+
+## Development Tools
+ESLint - Code linting
+
+Prettier - Code formatting
+
+Git - Version control
+
+## APIs & Integrations
+Google Maps - Location display
+
+Unsplash - Placeholder images
+
+EmailJS (optional) - Form submission
+
+# 📁 Project Structure
+
+
