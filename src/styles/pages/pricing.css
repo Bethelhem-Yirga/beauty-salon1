@@ -1,0 +1,720 @@
+/* ===== PRICING PAGE STYLES ===== */
+@import '../variables.css';
+
+.pricing-page {
+  padding: 2rem 0;
+  min-height: 80vh;
+}
+
+/* ===== HEADER SECTION ===== */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--services-title);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.pricing-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease forwards;
+}
+
+.pricing-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 1.5rem auto;
+  line-height: 1.6;
+}
+
+/* ===== LIST GROUP STYLES ===== */
+.pricing-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* List Group Container */
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* List Group Item */
+.list-group-item {
+  position: relative;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: var(--card-text);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  animation: slideInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.list-group-item:nth-child(1) { animation-delay: 0.1s; }
+.list-group-item:nth-child(2) { animation-delay: 0.2s; }
+.list-group-item:nth-child(3) { animation-delay: 0.3s; }
+.list-group-item:nth-child(4) { animation-delay: 0.4s; }
+.list-group-item:nth-child(5) { animation-delay: 0.5s; }
+.list-group-item:nth-child(6) { animation-delay: 0.6s; }
+
+.list-group-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+  border-radius: inherit;
+  transition: background 0.3s ease;
+}
+
+.list-group-item:hover {
+  transform: translateX(10px) scale(1.02);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.list-group-item:hover::before {
+  background: var(--card-glass-hover-bg);
+}
+
+/* Service Icon/Emoji (optional - if you want to add icons) */
+.list-group-item .service-icon {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Content Section */
+.list-group-item .content {
+  flex: 1;
+}
+
+.list-group-item .h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--card-text);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.list-group-item .h5::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.list-group-item:hover .h5::after {
+  width: 100%;
+}
+
+.list-group-item small {
+  font-size: 0.875rem;
+  color: var(--card-text-secondary);
+  line-height: 1.5;
+  display: block;
+}
+
+/* Price Section */
+.list-group-item .price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 100px;
+}
+
+.list-group-item strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.list-group-item:hover strong {
+  transform: scale(1.1);
+}
+
+/* Currency symbol */
+.list-group-item strong::before {
+  content: '$';
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 2px;
+  color: var(--accent-color);
+  opacity: 0.8;
+}
+
+/* Duration badge (optional) */
+.list-group-item .duration-badge {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: var(--card-border);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 0.25rem;
+}
+
+/* Popular Badge */
+.list-group-item.popular {
+  border: 2px solid var(--accent-color);
+  position: relative;
+  overflow: visible;
+}
+
+.list-group-item.popular::after {
+  content: '🔥 POPULAR';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--accent-color), #ff6b6b);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  z-index: 2;
+}
+
+/* Book Button (optional) */
+.list-group-item .btn-book-small {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.list-group-item .btn-book-small:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Category Badges */
+.list-group-item .category-badge {
+  font-size: 0.7rem;
+  background: var(--card-border);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+/* Shimmer effect */
+.list-group-item .shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) rotate(45deg);
+  pointer-events: none;
+}
+
+.list-group-item:hover .shimmer {
+  animation: shimmer 1s ease;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* ===== FILTER BUTTONS ===== */
+.pricing-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--card-border);
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--accent-color);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+  z-index: -1;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-color);
+  color: white;
+}
+
+.filter-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.filter-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-color);
+}
+
+/* ===== SUMMARY CARD ===== */
+.pricing-summary {
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+.pricing-summary h3 {
+  font-size: 1.5rem;
+  color: var(--card-text);
+  margin-bottom: 1rem;
+}
+
+.pricing-summary .total {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin: 1rem 0;
+  animation: pulse 2s infinite;
+}
+
+.pricing-summary .note {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pricing-summary .btn-book-all {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.pricing-summary .btn-book-all:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px var(--accent-color);
+}
+
+/* ===== DISCOUNT BADGES ===== */
+.discount-badge {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes expandWidth {
+  to {
+    width: 60px;
+  }
+}
+
+/* ===== LOADING STATE ===== */
+.pricing-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.pricing-loading .spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--card-border);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== EMPTY STATE ===== */
+.pricing-empty {
+  text-align: center;
+  padding: 4rem;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.pricing-empty .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.pricing-empty h3 {
+  color: var(--card-text);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-empty p {
+  color: var(--text-secondary);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 2.5rem;
+  }
+  
+  .list-group-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.2rem;
+  }
+  
+  .list-group-item .price {
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .list-group-item strong {
+    font-size: 1.3rem;
+  }
+  
+  .list-group-item.popular::after {
+    top: -8px;
+    right: 10px;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.8rem;
+  }
+  
+  .pricing-filters {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .pricing-summary {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .pricing-summary .total {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pricing-title {
+    font-size: 2rem;
+  }
+  
+  .pricing-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .list-group-item .h5 {
+    font-size: 1.1rem;
+  }
+  
+  .list-group-item small {
+    font-size: 0.8rem;
+  }
+  
+  .discount-badge {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+}
+
+/* ===== DARK MODE ADJUSTMENTS ===== */
+.theme-dark .list-group-item {
+  background: rgba(30, 30, 30, 0.7);
+}
+
+.theme-dark .filter-btn {
+  border-color: var(--card-border);
+}
+
+.theme-dark .pricing-summary {
+  background: rgba(30, 30, 30, 0.7);
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .list-group-item {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .filter-btn,
+  .btn-book-small,
+  .btn-book-all {
+    display: none !important;
+  }
+  
+  .list-group-item strong {
+    color: black !important;
+  }
+  
+  .list-group-item.popular::after {
+    background: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #999;
+  }
+}
+
+/* Additional styles for enhanced features */
+
+.service-meta {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.popular-badge {
+  background: linear-gradient(135deg, var(--accent-color), #ff6b6b);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.package-offer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card-glass-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.package-icon {
+  font-size: 2rem;
+}
+
+.package-details {
+  flex: 1;
+  text-align: left;
+}
+
+.package-name {
+  display: block;
+  font-weight: 600;
+  color: var(--card-text);
+}
+
+.package-services {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.package-price {
+  text-align: right;
+}
+
+.original-price {
+  display: block;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.discounted-price {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Empty State */
+.pricing-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  margin: 2rem 0;
+}
+
+.pricing-empty .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.5;
+}
+
+.pricing-empty h3 {
+  font-size: 1.5rem;
+  color: var(--card-text);
+  margin-bottom: 0.5rem;
+}
+
+.pricing-empty p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* ===== SUMMARY CARD - FORCE VISIBLE ===== */
+.pricing-summary {
+  display: block !important;  /* Force display */
+  visibility: visible !important;  /* Force visibility */
+  opacity: 1 !important;  /* Force opacity */
+  background: var(--card-glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+  position: relative;  /* Ensure it's in document flow */
+  z-index: 1;  /* Ensure it's above other elements */
+}
+
+/* Remove any conflicting animations that might hide it */
+.pricing-summary.animate-fade-in {
+  opacity: 1 !important;
+  animation: fadeInUp 0.8s ease forwards !important;
+}
