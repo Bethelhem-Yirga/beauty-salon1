@@ -1,4 +1,7 @@
 # 💇‍♀️ Beauty Salon - Web Application
+![Services Page Screenshot](/img/document_video.mp4)
+
+
 ![Services Page Screenshot](/img/home.png)
 *Figure 1: Our home page 
 
