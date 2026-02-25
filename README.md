@@ -1,6 +1,7 @@
 # 💇‍♀️ Beauty Salon - Web Application
-/beauti-salon/img/home.png
-
+/img/home.png
+![Services Page Screenshot](/img/home.png)
+*Figure 1: Our services page showing all beauty treatments*
 
 A modern, responsive beauty salon website built with React, featuring glass morphism design, dark/light theme switching, and complete business functionality.
 
