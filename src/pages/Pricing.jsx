@@ -64,33 +64,7 @@ export default function Pricing() {
         </p>
       </div>
 
-      {/* Category Filters */}
-      <div style={{ 
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '1rem',
-        flexWrap: 'wrap',
-        margin: '2rem 0'
-      }}>
-        {categories.map(category => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            style={{
-              padding: '0.6rem 1.5rem',
-              border: `2px solid ${activeCategory === category ? 'var(--accent-color, #0d6efd)' : 'var(--card-border, #dee2e6)'}`,
-              background: activeCategory === category ? 'var(--accent-color, #0d6efd)' : 'transparent',
-              color: activeCategory === category ? 'white' : 'var(--text-primary, #213547)',
-              borderRadius: '30px',
-              fontWeight: 500,
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </button>
-        ))}
-      </div>
+    
 
       {/* Category Filters */}
       <div className="pricing-filters animate-fade-in animate-delay-2">
