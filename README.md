@@ -1,18 +1,15 @@
 # 💇‍♀️ Beauty Salon - Web Application
 ![Services Page Screenshot](/img/doc.gif)
-
-
-![Services Page Screenshot](/img/home.png)
 *Figure 1: Our home page 
 
 ![Services Page Screenshot](/img/staffs.png)
-*Figure 1: staffs page 
+*Figure 2: staffs page 
 
 ![Services Page Screenshot](/img/gallary.png)
-*Figure 1: gallary page 
+*Figure 3: gallary page 
 
 ![Services Page Screenshot](/img/profile.png)
-*Figure 1: staff profile page 
+*Figure 4: staff profile page 
 
 
 
