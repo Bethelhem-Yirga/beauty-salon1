@@ -161,3 +161,5 @@ html {
 .animate-bounce { animation: bounce 2s ease-in-out infinite; }
 .animate-pulse-hover:hover { animation: pulse 0.5s ease-in-out; }
 .animate-rotate { animation: rotate 10s linear infinite; }
+
+
