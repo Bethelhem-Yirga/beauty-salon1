@@ -15,6 +15,11 @@
 /* Pages */
 @import './pages/home.css';
 @import './pages/services.css';
+@import './pages/pricing.css';
+@import './pages/staff.css';
+@import './pages/gallery.css';
+@import './pages/about.css';
+@import './pages/contact.css';
 
 /* Utilities */
 @import './accessibility.css';
