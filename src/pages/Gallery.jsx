@@ -4,35 +4,35 @@ import React, { useState } from 'react'
 const galleryImages = [
   {
     id: 1,
-    src: 'img/NAIL_ART.png',
+    src: '/img/NAIL_ART.png',
     title: 'Elegant Manicure',
     category: 'nails',
     description: 'Classic red manicure with glossy finish'
   },
   {
     id: 2,
-    src: 'img/p.png',
+    src: '/img/p.png',
     title: 'Pedicure Paradise',
     category: 'nails',
     description: 'Relaxing pedicure treatment'
   },
   {
     id: 3,
-    src: 'img/nail.png',
+    src: '/img/nail.png',
     title: 'Nail Art Design',
     category: 'nails',
     description: 'Intricate floral nail art design'
   },
   {
     id: 4,
-    src: 'img/eyelash.png',
+    src: '/img/eyelash.png',
     title: 'Eyelash Extensions',
     category: 'eyes',
     description: 'Voluminous lash extensions'
   },
   {
     id: 5,
-    src: 'img/eyebrow.png',
+    src: '/img/eyebrow.png',
     title: 'Eyebrow Shaping',
     category: 'eyes',
     description: 'Perfectly arched eyebrows'
@@ -46,14 +46,14 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: 'img/bridal.png',
+    src: '/img/bridal.png',
     title: 'Bridal Makeup',
     category: 'makeup',
     description: 'Elegant bridal makeup'
   },
   {
     id: 8,
-    src: 'img/salon.png',
+    src: '/img/salon.png',
     title: 'Salon Interior',
     category: 'salon',
     description: 'Our beautiful salon space'
@@ -67,14 +67,14 @@ const galleryImages = [
   },
   {
     id: 10,
-    src: 'img/hair.png',
+    src: '/img/hair.png',
     title: 'Hair Color',
     category: 'hair',
     description: 'Beautiful balayage technique'
   },
   {
     id: 11,
-    src: 'img/nail_art_collection.png',
+    src: '/img/nail_art_collection.png',
     title: 'Nail Art Collection',
     category: 'nails',
     description: 'Latest nail art designs'
