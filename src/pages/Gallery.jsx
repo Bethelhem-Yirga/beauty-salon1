@@ -4,35 +4,35 @@ import React, { useState } from 'react'
 const galleryImages = [
   {
     id: 1,
-    src: 'img/red-manicure.jpeg',
+    src: 'img/NAIL_ART.png',
     title: 'Elegant Manicure',
     category: 'nails',
     description: 'Classic red manicure with glossy finish'
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&h=400&fit=crop',
+    src: 'img/p.png',
     title: 'Pedicure Paradise',
     category: 'nails',
     description: 'Relaxing pedicure treatment'
   },
   {
     id: 3,
-    src: 'img/nail-art.png',
+    src: 'img/nail.png',
     title: 'Nail Art Design',
     category: 'nails',
     description: 'Intricate floral nail art design'
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1583001938182-7a5b4c9c7b3b?w=600&h=400&fit=crop',
+    src: 'img/eyelash.png',
     title: 'Eyelash Extensions',
     category: 'eyes',
     description: 'Voluminous lash extensions'
   },
   {
     id: 5,
-    src: 'https://images.unsplash.com/photo-1583001938182-7a5b4c9c7b3b?w=600&h=400&fit=crop',
+    src: 'img/eyebrow.png',
     title: 'Eyebrow Shaping',
     category: 'eyes',
     description: 'Perfectly arched eyebrows'
@@ -46,14 +46,14 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=400&fit=crop',
+    src: 'img/bridal.png',
     title: 'Bridal Makeup',
     category: 'makeup',
     description: 'Elegant bridal makeup'
   },
   {
     id: 8,
-    src: 'https://images.unsplash.com/photo-1507914372368-b2b085b925a1?w=600&h=400&fit=crop',
+    src: 'img/salon.png',
     title: 'Salon Interior',
     category: 'salon',
     description: 'Our beautiful salon space'
@@ -67,17 +67,18 @@ const galleryImages = [
   },
   {
     id: 10,
-    src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=400&fit=crop',
+    src: 'img/hair.png',
     title: 'Hair Color',
     category: 'hair',
     description: 'Beautiful balayage technique'
   },
   {
     id: 11,
-    src: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=400&fit=crop',
+    src: 'img/nail_art_collection.png',
     title: 'Nail Art Collection',
     category: 'nails',
     description: 'Latest nail art designs'
+
   },
   {
     id: 12,
