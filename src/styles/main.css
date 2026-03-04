@@ -11,6 +11,7 @@
 @import './components/footer.css';
 @import './components/service-card.css';
 @import './components/package.css';
+@import './components/loader.css';
 
 /* Pages */
 @import './pages/home.css';

@@ -6,8 +6,7 @@ const services = [
     id: 1,
     name: 'Manicure',
     description: 'Professional hand care with nail shaping, cuticle treatment, and polish application for beautiful, healthy nails.',
-    price: 35,
-    duration: 45,
+   
     popular: true,
     features: ['Nail shaping', 'Cuticle care', 'Polish application', 'Hand massage']
   },
@@ -163,17 +162,7 @@ export default function Services() {
                     ))}
                   </div>
 
-                  {/* Price and Duration */}
-                  <div className="service-meta">
-                    <div className="price-section">
-                      <span className="price-currency">$</span>
-                      <span className="price-amount">{service.price}</span>
-                    </div>
-                    <div className="duration-section">
-                      <span className="duration-icon">⏱️</span>
-                      <span className="duration-text">{service.duration} min</span>
-                    </div>
-                  </div>
+                
 
                   {/* Action Buttons */}
                   <div className="card-actions">
@@ -211,12 +200,7 @@ export default function Services() {
             </div>
           </div>
           <div className="col-lg-4 text-lg-end">
-            <div className="package-price">
-              <span className="old-price">$145</span>
-              <span className="new-price">$109</span>
-            </div>
             <button className="btn-package">Book Package</button>
-            <p className="package-save mt-2">Save $36!</p>
           </div>
         </div>
       </div>

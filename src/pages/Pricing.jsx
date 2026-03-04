@@ -100,13 +100,12 @@ export default function Pricing() {
                     </div>
                     <small className="text-muted">{service.description}</small>
                     <div className="service-meta">
-                      <span className="duration-badge">⏱️ {service.duration} min</span>
                       <span className="category-badge">{service.category}</span>
                     </div>
                   </div>
                 </div>
                 <div className="price">
-                  <strong>${service.price}</strong>
+                  <strong>{service.price}</strong>
                   <button className="btn-book-small">Book</button>
                 </div>
                 <div className="shimmer"></div>

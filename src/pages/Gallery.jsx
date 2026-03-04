@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 const galleryImages = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=400&fit=crop',
+    src: 'img/red-manicure.jpeg',
     title: 'Elegant Manicure',
     category: 'nails',
     description: 'Classic red manicure with glossy finish'
@@ -18,7 +18,7 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=600&h=400&fit=crop',
+    src: 'img/nail-art.png',
     title: 'Nail Art Design',
     category: 'nails',
     description: 'Intricate floral nail art design'

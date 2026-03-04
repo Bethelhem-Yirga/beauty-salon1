@@ -103,11 +103,6 @@ export default function Staff() {
                 {/* Bio */}
                 <p className="staff-bio">{member.bio}</p>
 
-                {/* Availability */}
-                <div className="staff-availability">
-                  <span className="availability-icon">📅</span>
-                  <span className="availability-text">{member.availability}</span>
-                </div>
 
                 {/* Action Buttons */}
                 <div className="staff-actions">
@@ -117,9 +112,7 @@ export default function Staff() {
                   >
                     View Profile
                   </button>
-                  <button className="btn-book">
-                    Book Now
-                  </button>
+                 
                 </div>
               </div>
 
@@ -162,10 +155,7 @@ export default function Staff() {
                     <span className="detail-label">Rating</span>
                     <span className="detail-value">⭐ {selectedMember.rating}/5.0</span>
                   </div>
-                  <div className="detail-item">
-                    <span className="detail-label">Availability</span>
-                    <span className="detail-value">{selectedMember.availability}</span>
-                  </div>
+              
                 </div>
 
                 <div className="modal-bio">
