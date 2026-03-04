@@ -106,18 +106,112 @@
   gap: 1rem;
 }
 
+/* ===== UPDATED SINGLE THEME TOGGLE BUTTON - ICONS ONLY ===== */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--theme-toggle-bg, rgba(255, 255, 255, 0.15));
+  border: 1px solid var(--theme-toggle-border, rgba(255, 255, 255, 0.2));
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: var(--text-primary);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  padding: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--theme-toggle-hover-bg, rgba(255, 255, 255, 0.25));
+  transform: translateY(-2px) rotate(5deg);
+  box-shadow: 0 4px 12px var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.9);
+}
+
+.theme-icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px var(--shadow-color));
+  line-height: 1;
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Theme-specific button styles */
+.theme-dark .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.theme-light .theme-toggle-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #213547;
+}
+
+/* Icon animations based on theme */
+.theme-dark .theme-toggle-btn .theme-icon {
+  animation: sunGlow 3s ease-in-out infinite;
+}
+
+.theme-light .theme-toggle-btn .theme-icon {
+  animation: moonGlow 3s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.3)); }
+  50% { filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.6)); }
+}
+
+@keyframes moonGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(13, 110, 253, 0.3)); }
+  50% { filter: drop-shadow(0 0 15px rgba(13, 110, 253, 0.6)); }
+}
+
 /* Focus states */
 .glass-header .nav-link:focus,
 .glass-header .btn-contact:focus,
-.glass-header .navbar-brand:focus {
+.glass-header .navbar-brand:focus,
+.theme-toggle-btn:focus {
   outline: 3px solid rgba(13,110,253,0.18);
   outline-offset: 2px;
-  border-radius: 6px;
+  border-radius: 50%;
   z-index: 3;
 }
 
 /* Responsive header */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .theme-icon {
+    font-size: 1.3rem;
+  }
+}
+
 @media (max-width: 575.98px) {
   .brand-text { display: none; }
   .glass-header .nav-link { padding: 0.5rem 0.75rem; }
+  
+  .theme-toggle-btn {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .theme-icon {
+    font-size: 1.2rem;
+  }
 }

@@ -63,12 +63,8 @@ export default function Header() {
     window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  const setLightTheme = () => {
-    setTheme('light')
-  }
-
-  const setDarkTheme = () => {
-    setTheme('dark')
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark')
   }
 
   // Don't render theme toggle until mounted to prevent hydration mismatch
@@ -113,26 +109,18 @@ export default function Header() {
           </Navbar.Brand>
 
           <div className="header-controls d-flex align-items-center">
-            {/* Icon-based Theme Toggle - No Tooltips */}
-            <div className="theme-icons" role="group" aria-label="Theme selector">
-              <button
-                className={`theme-icon-btn ${theme === 'light' ? 'active' : ''}`}
-                onClick={setLightTheme}
-                aria-label="Switch to light theme"
-                aria-pressed={theme === 'light'}
-              >
-                <span className="theme-icon" aria-hidden="true">☀️</span>
-              </button>
-              
-              <button
-                className={`theme-icon-btn ${theme === 'dark' ? 'active' : ''}`}
-                onClick={setDarkTheme}
-                aria-label="Switch to dark theme"
-                aria-pressed={theme === 'dark'}
-              >
-                <span className="theme-icon" aria-hidden="true">🌙</span>
-              </button>
-            </div>
+            {/* Single Theme Toggle Button - Changes icon based on theme */}
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              <span className="theme-icon" aria-hidden="true">
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </span>
+             
+            </button>
 
             <Navbar.Toggle aria-controls="main-nav" />
           </div>
