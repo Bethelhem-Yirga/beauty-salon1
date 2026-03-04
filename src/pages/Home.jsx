@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const heroRef = useRef(null)
   const titleRef = useRef(null)
   const descriptionRef = useRef(null)
   const buttonRef = useRef(null)
   const cardsRef = useRef([])
+  const videoRef = useRef(null)
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -36,12 +38,38 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      {/* Hero Section with Floating Animation */}
+      {/* Hero Section with Video Background */}
       <div 
         ref={heroRef}
-        className="hero-section p-5 mb-4 rounded-3 animate-float"
+        className="hero-section video-hero p-5 mb-4 rounded-3"
       >
-        <div className="container-fluid py-5">
+        {/* Video Background */}
+        <div className="video-background">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onLoadedData={() => setVideoLoaded(true)}
+            className={`video-bg ${videoLoaded ? 'loaded' : ''}`}
+          >
+            {/* Option 1: Local video file */}
+            <source src="/videos/salon-background.mp4" type="video/mp4" />
+            
+            {/* Option 2: Online video source */}
+            {/* <source src="https://example.com/your-video.mp4" type="video/mp4" /> */}
+            
+            {/* Fallback for browsers that don't support video */}
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Optional Overlay to darken video for text readability */}
+          <div className="video-overlay"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container-fluid py-5 video-content">
           <h1 
             ref={titleRef}
             className="display-5 fw-bold animate-slide-up"
@@ -63,7 +91,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Animated background elements */}
+        {/* Animated background elements (optional - can keep or remove) */}
         <div className="floating-elements">
           <div className="floating-element floating-1">💇‍♀️</div>
           <div className="floating-element floating-2">💅</div>
@@ -72,6 +100,7 @@ export default function Home() {
         </div>
       </div>
       
+      {/* Rest of your component remains the same */}
       {/* Featured Services Section */}
       <div className="featured-services mt-5">
         <h2 className="text-center mb-4 section-title animate-fade-in">
