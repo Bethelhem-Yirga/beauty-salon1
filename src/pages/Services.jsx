@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom' // Import useNavigate
 
 // Services data
 const services = [
@@ -61,6 +62,8 @@ export default function Services() {
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
   const cardsRef = useRef([])
+  const navigate = useNavigate(); // Initialize navigate
+  
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -99,6 +102,18 @@ export default function Services() {
     }
     return icons[name] || '💇‍♀️'
   }
+
+     // Handle book button click
+  const handleBookClick = (service) => {
+    // Navigate to contact page with service information in state
+    navigate('/contact', { 
+      state: { 
+        selectedService: service,
+        fromPricing: true 
+      } 
+    });
+  };
+
 
   return (
     <div className="services-page" ref={sectionRef}>
@@ -166,11 +181,12 @@ export default function Services() {
 
                   {/* Action Buttons */}
                   <div className="card-actions">
-                    <button className="btn-book">
+                    <button className="btn-book"  onClick={() => handleBookClick(services)}>
                       <span>Book Now</span>
                       <span className="btn-icon">→</span>
                     </button>
-                    <button className="btn-details" title="More Details">
+                    <button className="btn-details" title="More Details" 
+                      >
                       <span className="btn-icon">ℹ️</span>
                     </button>
                   </div>
@@ -200,7 +216,9 @@ export default function Services() {
             </div>
           </div>
           <div className="col-lg-4 text-lg-end">
-            <button className="btn-package">Book Package</button>
+            <button className="btn-package"
+              onClick={() => handleBookClick(services)}
+            >Book Package</button>
           </div>
         </div>
       </div>

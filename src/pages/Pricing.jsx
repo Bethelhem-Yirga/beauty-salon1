@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom' // Import useNavigate
 import services, { getCategories } from '../data/services'
 import { getServiceIcon } from '../utils/serviceHelpers'
 
 export default function Pricing() {
+  const navigate = useNavigate(); // Initialize navigate
   const [activeCategory, setActiveCategory] = useState('all');
   const categories = getCategories();
   
@@ -15,10 +17,21 @@ export default function Pricing() {
   const pedicure = services.find(s => s.id === 'pedicure');
   const fullMakeup = services.find(s => s.id === 'makeup');
   
-  // Calculate package prices
+  // Calculate package prices (in ETB)
   const packageTotal = (manicure?.price || 30) + (pedicure?.price || 45) + (fullMakeup?.price || 75);
   const packageDiscount = Math.round(packageTotal * 0.2);
   const packagePrice = packageTotal - packageDiscount;
+
+   // Handle book button click
+  const handleBookClick = (service) => {
+    // Navigate to contact page with service information in state
+    navigate('/contact', { 
+      state: { 
+        selectedService: service,
+        fromPricing: true 
+      } 
+    });
+  };
 
   return (
     <div style={{ 
@@ -64,8 +77,6 @@ export default function Pricing() {
         </p>
       </div>
 
-    
-
       {/* Category Filters */}
       <div className="pricing-filters animate-fade-in animate-delay-2">
         {categories.map(category => (
@@ -105,8 +116,10 @@ export default function Pricing() {
                   </div>
                 </div>
                 <div className="price">
-                  <strong>{service.price}</strong>
-                  <button className="btn-book-small">Book</button>
+                  <strong>ETB {service.price}</strong>
+                  <button className="btn-book-small"
+                    onClick={() => handleBookClick(service)}
+                  >Book</button>
                 </div>
                 <div className="shimmer"></div>
               </div>
@@ -133,11 +146,14 @@ export default function Pricing() {
             </span>
           </div>
           <div className="package-price">
-            <span className="original-price">${packageTotal}</span>
-            <span className="discounted-price">${packagePrice}</span>
+            <span className="original-price">ETB {packageTotal}</span>
+            <span className="discounted-price">ETB {packagePrice}</span>
           </div>
         </div>
-        <button className="btn-book-all">Book Package (Save 20%)</button>
+        
+        <button className="btn-book-all"
+          onClick={() => handleBookClick(services)}
+        >Book Package (Save 20%)</button>
         <p className="note">*Limited time offer</p>
       </div>
     </div>

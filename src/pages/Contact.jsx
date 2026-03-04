@@ -43,7 +43,7 @@ export default function Contact() {
                 <div className="info-icon">📍</div>
                 <div className="info-content">
                   <h3>Visit Us</h3>
-                  <p>Gerji Alfoz Plaza, 4th Floor</p>
+                  <p>Gerji, 4th Floor</p>
                   <p>Addis Ababa, Ethiopia</p>
                 </div>
               </div>
@@ -53,10 +53,10 @@ export default function Contact() {
                 <div className="info-content">
                   <h3>Call Us</h3>
                   <p>
-                    <a href="tel:+251911234567">+251 911 234 567</a>
+                    <a href="tel:+2519xxxxxxxx">+2519xxxxxxxx</a>
                   </p>
                   <p>
-                    <a href="tel:+251922345678">+251 922 345 678</a>
+                    <a href="tel:+2519xxxxxxxx">+2519xxxxxxxx</a>
                   </p>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       className="form-input"
-                      placeholder="John Doe"
+                      placeholder="enter full name"
                       required
                     />
                   </div>
@@ -152,7 +152,7 @@ export default function Contact() {
                       value={form.email}
                       onChange={handleChange}
                       className="form-input"
-                      placeholder="john@example.com"
+                      placeholder="enter email address"
                       required
                     />
                   </div>

@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="footer-col">
             <div className="footer-heading">Get In Touch</div>
             <address style={{ fontStyle: "normal" }}>
-              <div className="u-muted">Gerji Alfoz Plaza, 4th Floor</div>
+              <div className="u-muted">Gerji, 4th Floor</div>
               <div className="u-muted">Addis Ababa, Ethiopia</div>
               <div style={{ marginTop: ".5rem" }}>
                 <a href="tel:+2519xxxxxxxx" className="footer-link">+251 9xx xxxxxx</a><br/>

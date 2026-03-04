@@ -718,3 +718,38 @@
   opacity: 1 !important;
   animation: fadeInUp 0.8s ease forwards !important;
 }
+
+/* Update in your pricing.css - find these sections */
+
+/* Price Section - update the currency symbol styling */
+.price-section {
+  display: flex;
+  align-items: baseline;
+}
+
+.price-currency {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-right: 2px;
+  font-weight: 600;
+}
+
+.price-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1;
+}
+
+/* For the list items */
+.list-group-item .price strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+/* Remove the dollar sign pseudo-element if you had it */
+.list-group-item strong::before {
+  display: none; /* Remove the $ symbol */
+}
