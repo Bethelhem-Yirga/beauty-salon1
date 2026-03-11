@@ -1,5 +1,5 @@
 # 💇‍♀️ Beauty Salon - Web Application
-![Services Page Screenshot](/img/doc.gif)
+![Services Page Screenshot](/img/home.gif)
 *Figure 1: Our home page 
 
 ![Services Page Screenshot](/img/staffs.png)
