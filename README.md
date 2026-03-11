@@ -8,8 +8,8 @@
 ![Services Page Screenshot](/img/gallary.png)
 *Figure 3: gallary page 
 
-![Services Page Screenshot](/img/profile.png)
-*Figure 4: staff profile page 
+![Services Page Screenshot](/img/service.png)
+*Figure 4: service page 
 
 
 
